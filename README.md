@@ -222,6 +222,10 @@ All REST API responses follow this format:
 }
 ```
 
+## Business Problem Solved
+
+This backend solves the core challenges facing SaaS businesses that need to serve multiple independent customers (tenants) from a single deployed system without compromising data isolation. Shared-table architectures where application bugs can accidentally expose Tenant A's data to Tenant B represent an existential compliance risk. By enforcing **tenant isolation at the PostgreSQL row-level security (RLS) layer**, this system makes cross-tenant data leakage structurally impossible — no application-level bug can bypass database-level policies. Combined with JWT authentication, real-time WebSocket feeds, and event streaming via Apache Kafka, it provides a production-grade foundation that scales horizontally from day one.
+
 ## Limitations
 
 - Refresh tokens stored in HTTP-only cookies (no token rotation)
