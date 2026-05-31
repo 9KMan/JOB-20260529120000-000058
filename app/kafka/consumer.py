@@ -1,3 +1,4 @@
+import asyncio
 import json
 import logging
 from typing import Callable, Awaitable
@@ -57,7 +58,5 @@ class KafkaConsumer:
         except Exception as e:
             logger.error(f"Kafka consumer loop error: {e}")
 
-
-import asyncio
 
 kafka_consumer = KafkaConsumer()
